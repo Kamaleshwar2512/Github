@@ -1,0 +1,145 @@
+:root {
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --accent: #2b6ef6;
+    --muted: #6b7280;
+    --highlight: #ffe9d6;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #0f172a
+}
+
+.container {
+    max-width: 980px;
+    margin: 36px auto;
+    padding: 28px;
+    background: var(--card);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(13, 20, 38, 0.08)
+}
+
+h1 {
+    margin: 0 0 18px;
+    font-size: 1.4rem
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px
+}
+
+.row.inline {
+    display: flex;
+    gap: 12px
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 6px
+}
+
+input,
+select {
+    padding: 10px 12px;
+    border: 1px solid #e6edf3;
+    border-radius: 8px;
+    font-size: 1rem
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px
+}
+
+button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: #eef3ff;
+    color: var(--accent);
+    cursor: pointer
+}
+
+button.primary {
+    background: var(--accent);
+    color: white
+}
+
+.results {
+    margin-top: 22px
+}
+
+.summary {
+    display: flex;
+    gap: 18px;
+    align-items: center
+}
+
+.summary>div {
+    background: #fbfdff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    min-width: 140px
+}
+
+.big {
+    font-size: 1.25rem;
+    margin-top: 6px
+}
+
+.highlight {
+    background: var(--highlight);
+    padding: 6px;
+    border-radius: 6px;
+    margin-top: 6px
+}
+
+.table-wrap {
+    margin-top: 18px
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white
+}
+
+th,
+td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eef3f6;
+    text-align: right
+}
+
+th {
+    text-align: left;
+    color: var(--muted);
+    font-weight: 600
+}
+
+.muted {
+    color: var(--muted);
+    text-align: center;
+    padding: 18px
+}
+
+@media(max-width:700px) {
+    .summary {
+        flex-direction: column
+    }
+
+    .row.inline {
+        flex-direction: column
+    }
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Loan / EMI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Loan / EMI Calculator</h1>
+
+        <form id="loanForm" onsubmit="return false;">
+            <div class="row">
+                <label>Loan Amount</label>
+                <input id="principal" type="number" min="0" step="0.01" placeholder="e.g. 500000" required>
+            </div>
+
+            <div class="row">
+                <label>Annual Interest Rate (%)</label>
+                <input id="annualRate" type="number" min="0" step="0.01" placeholder="e.g. 7.5" required>
+            </div>
+
+            <div class="row inline">
+                <div>
+                    <label>Tenure</label>
+                    <input id="tenureValue" type="number" min="1" step="1" placeholder="e.g. 20" required>
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <select id="tenureUnit">
+                        <option value="years">Years</option>
+                        <option value="months">Months</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="calculateBtn" class="primary">Calculate</button>
+                <button id="clearBtn" type="button">Clear</button>
+            </div>
+        </form>
+
+        <section class="results">
+            <div class="summary">
+                <div>
+                    <strong>Monthly EMI</strong>
+                    <div id="emi" class="big">—</div>
+                </div>
+                <div>
+                    <strong>Total Payment</strong>
+                    <div id="totalPayment">—</div>
+                </div>
+                <div>
+                    <strong>Total Interest</strong>
+                    <div id="totalInterest" class="highlight">—</div>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <h2>Amortization Schedule</h2>
+                <table id="amortizationTable">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Payment</th>
+                            <th>Interest</th>
+                            <th>Principal</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="muted">No results yet — enter values and click Calculate.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
